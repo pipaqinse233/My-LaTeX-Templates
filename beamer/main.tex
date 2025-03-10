@@ -9,37 +9,58 @@
 
 \begin{document}
 
-\title{My \LaTeX Beamer Template}
+\title{
+My \LaTeX% 
+Beamer Template
+}
 \subtitle{Subtitle}
-\author{Name}
+\author[Name]{Full Name}
+\institute[Institutes]{% 这里一定要注释！！！
+Institute A \and
+Institute B
+}
 \date{\today}
+
+% 标题页
+\begin{frame}
 \maketitle
+\end{frame}
+
+\section*{目录}
+\begin{frame}
+\frametitle{\secname}
+\tableofcontents[hideallsubsections]
+\end{frame}
 
 \section{Introduction\\引言}
 \begin{frame}
-  \frametitle{Introduction\\引言}
-  \lipsum[1]
-  \framebreak
-  \zhlipsum[1]
+\frametitle{Introduction\\引言}
+\lipsum[1]
+\end{frame}
+
+\begin{frame}
+\zhlipsum[1]
 \end{frame}
 
 \section{Test\\测试}
 \subsection{Text\\文本}
 \subsubsection{Lorem ipsum\\乱数假文}
 \begin{frame}
-  \frametitle{Lorem ipsum\\乱数假文}
-  \lipsum[2]
-  \framebreak
-  \zhlipsum[2]
+\frametitle{Lorem ipsum\\乱数假文}
+\lipsum[2]
+\end{frame}
+
+\begin{frame}
+\zhlipsum[2]
 \end{frame}
 
 \subsubsection{公式}
 \begin{frame}
-以下是一个行内公式：\( E = mc^2 \)。
+以下是一个行内公式：\( E = m c^2 \)。
 
 以下是一个行间公式：
 \[
-\int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\int_{a}^{b} f(x)~\mathrm{d}x = F(b) - F(a)
 \]
 \end{frame}
 
@@ -48,10 +69,9 @@
 \begin{frame}
 以下是一张图片：
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{example-image} % 使用 example-image 占位图
-    \caption{这是一张图片}
-    \label{fig:example}
+\centering
+\includegraphics[width=0.5\textwidth]{example-image} % 使用 example-image 占位图
+\caption{这是一张图片}\label{fig:example}
 \end{figure}
 \end{frame}
 
@@ -59,18 +79,17 @@
 \begin{frame}
 以下是一个表格：
 \begin{table}[htbp]
-    \centering
-    \begin{tabular}{|c|c|c|}
-        \hline
-        序号 & 名称 & 描述 \\
-        \hline
-        1 & 项目A & 描述A \\
-        2 & 项目B & 描述B \\
-        3 & 项目C & 描述C \\
-        \hline
-    \end{tabular}
-    \caption{这是一个表格}
-    \label{tab:example}
+\centering
+\begin{tabular}{ccc}
+\toprule
+序号 & 名称 & 描述 \\
+\midrule
+1 & 项目A & 描述A \\
+2 & 项目B & 描述B \\
+3 & 项目C & 描述C \\
+\bottomrule
+\end{tabular}
+\caption{这是一个表格}\label{tab:example}
 \end{table}
 \end{frame}
 
@@ -78,31 +97,33 @@
 \begin{frame}
 以下是一些超链接：
 \begin{itemize}
-    \item 访问 \href{https://www.latex-project.org/}{LaTeX 官网}。
-    \item 引用图片 \ref{fig:example} 和表格 \ref{tab:example}。
-    \item 引用公式 \( E = mc^2 \)。
+\item 访问 \href{https://www.latex-project.org/}{LaTeX 官网}。
+\item 引用图片~\ref{fig:example} 和表格~\ref{tab:example}。
+\item 引用公式 \( E = mc^2 \)。
 \end{itemize}
 \end{frame}
 
 \subsection{参考文献测试}
 \begin{frame}
 以下是一个参考文献引用：\cite{latexcompanion}。
-\framebreak
+\framebreak%
 以下是参考文献列表：
 \begin{thebibliography}{9}
-    \bibitem{latexcompanion}
-    Michel Goossens, Frank Mittelbach, and Alexander Samarin.
-    \textit{The LaTeX Companion}.
-    Addison-Wesley, 1993.
+\bibitem{latexcompanion}
+Michel Goossens, Frank Mittelbach, and Alexander Samarin.
+\textit{The LaTeX Companion}.
+Addison-Wesley, 1993.
 \end{thebibliography}
 \end{frame}
 
 \section{Conclusion\\结论}
 \begin{frame}
-  \frametitle{Conclusion\\结论}
-  \lipsum[3]
-  \framebreak
-  \zhlipsum[3]
+\frametitle{Conclusion\\结论}
+\lipsum[3]
+\end{frame}
+
+\begin{frame}
+\zhlipsum[3]
 \end{frame}
 
 \end{document}
