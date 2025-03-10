@@ -1,0 +1,28 @@
+% 字体设置
+\setmainfont{Palatino Linotype} % 设置主字体
+
+\usepackage{unicode-math} % 数学字体支持
+\setmathfont{Palatino Linotype} % 设置数学字体
+
+\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun} % 设置中文字体
+
+% % 设置主字体为思源宋体
+% \setCJKmainfont{Source Han Serif SC}[
+%   BoldFont=Source Han Serif SC Bold,
+%   ItalicFont=Source Han Serif SC Light
+% ]
+
+% % 设置无衬线字体为思源黑体
+% \setCJKsansfont{Source Han Sans SC}[
+%   BoldFont=Source Han Sans SC Bold
+% ]
+
+% % 设置等宽字体为系统默认
+% \setCJKmonofont{SimSun}
+
+\punctstyle{kaiming} % 设置中文标点样式
+
+% 特殊字体效果
+\usepackage{xeCJKfntef}
+\xeCJKsetup{underdot/symbol={·}} % 设置下加点符号
+\newcommand{\dotemph}[1]{\CJKunderdot{#1}} % 定义加点强调命令
