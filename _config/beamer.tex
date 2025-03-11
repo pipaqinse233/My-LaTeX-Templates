@@ -1,2 +1,12 @@
-\usepackage{xeCJK}
-\usetheme{Berlin}      % 使用 Berlin 主题
+\usetheme{Berlin} % 使用 Berlin 主题
+
+\AtBeginSection[]{
+    \begin{frame}
+    \tableofcontents[currentsection, hideothersubsections]
+    \end{frame}
+    }
+
+% 引入全局配置
+\input{../_config/_style.tex}
+\input{../_config/_fonts.tex}
+\input{../_config/_colors.tex}

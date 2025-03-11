@@ -1,11 +1,10 @@
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169]{ctexbeamer}
+\mode<presentation>{} % 设置模式
+% \documentclass[aspectratio=169, handout]{ctexbeamer}
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
 
 \input{../_config/beamer.tex}
-
-% 引入全局配置
-\input{../_config/_style.tex}
-\input{../_config/_fonts.tex}
-\input{../_config/_colors.tex}
 
 \begin{document}
 
@@ -56,8 +55,8 @@ Institute B
 
 \subsubsection{公式}
 \begin{frame}
-以下是一个行内公式：\( E = m c^2 \)。
-
+以下是一个行内公式：\( E = m c^2 \)\label{eqa:example}。
+\pause%
 以下是一个行间公式：
 \[
 \int_{a}^{b} f(x)~\mathrm{d}x = F(b) - F(a)
@@ -95,11 +94,11 @@ Institute B
 
 \subsection{超链接}
 \begin{frame}
-以下是一些超链接：
+\uncover<4->{以下是一些超链接：}
 \begin{itemize}
-\item 访问 \href{https://www.latex-project.org/}{LaTeX 官网}。
-\item 引用图片~\ref{fig:example} 和表格~\ref{tab:example}。
-\item 引用公式 \( E = mc^2 \)。
+\item<1-> 访问 \href{https://www.latex-project.org/}{LaTeX 官网}。
+\item<2-> 引用图片~\ref{fig:example}\uncover<4->{和表格~\ref{tab:example}。}
+\item<3-> 引用公式~\ref{eqa:example}。
 \end{itemize}
 \end{frame}
 
