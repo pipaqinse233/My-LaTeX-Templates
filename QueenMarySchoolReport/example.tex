@@ -1,0 +1,44 @@
+% example.tex
+\documentclass{qmes-template}
+\usepackage{listings}
+
+\title{Report Template of QMES}
+\course{QXU114514}
+\date{\today}
+
+\addstudent{Zhang San}{20231234}
+\addstudent{Li Si}{20245678}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+This is the main content of the document. Page numbering starts here.
+
+\section{Methodology}
+Sample text for demonstrating the template features.
+
+\subsection{Subsection}
+Additional content to show hierarchical structure.
+
+\begin{lstlisting}
+    import pandas as pd
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    
+    df = pd.read_csv( "abaaba.csv" )
+    data = pd.DataFrame(df['X'])
+    sns.set_theme()
+    
+    sns.histplot(data=data,x='X',bins=15)
+    
+    plt.xlabel('111')
+    plt.ylabel('222')
+    plt.legend(123")
+    
+    plt.show()
+\end{lstlisting}
+
+\end{document}
