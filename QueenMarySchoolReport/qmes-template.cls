@@ -14,18 +14,58 @@
 \RequirePackage{shellesc}
 \RequirePackage{newtxtext}
 \RequirePackage{newtxmath}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+\RequirePackage[colorlinks,linkcolor=black]{hyperref}
 
 \geometry{a4paper,left=25mm,right=20mm,top=25mm,bottom=25mm}
 
 % 用户可定义的字段
 \newcommand{\@course}{}
 \newcommand{\course}[1]{\renewcommand{\@course}{#1}}
+\newcommand{\@wordcount}{}
+\newcommand{\wordcount}[1]{\renewcommand{\@wordcount}{#1}}
 \newcommand{\studentlist}{}
 \newcommand{\addstudent}[2]{\listadd{\studentlist}{{#1}{#2}}}
 
-% 设置Times New Roman字体
-\RequirePackage{newtxtext}
-\RequirePackage{newtxmath}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.96}
+
+% Configure listings package
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    numbers=left,
+    stepnumber=1,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{codegray},
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    columns=fullflexible,
+    keepspaces=true,
+    xleftmargin=15pt,
+    framexleftmargin=15pt,
+    breaklines=true,
+    extendedchars=false
+}
+
+% Code import command
+\newcommand{\includecode}[2][]{%
+  \lstinputlisting[#1]{#2}%
+}
+
 
 % 页眉页脚设置
 \setlength{\headheight}{15pt}
@@ -69,13 +109,13 @@
         \end{minipage}
         
         \vfill
-        Word Count: \\
+        Word Count: \@wordcount \\
         \@date \\
         Course: \@course \\
     \end{center}
     \newpage
     \pagestyle{fancy}
-    \setcounter{page}{1}
+    \setcounter{page}{0}
 }
 
 % 目录页设置保持不变

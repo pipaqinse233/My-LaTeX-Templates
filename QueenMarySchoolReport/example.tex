@@ -1,10 +1,10 @@
-% example.tex
 \documentclass{qmes-template}
-\usepackage{listings}
 
 \title{Report Template of QMES}
 \course{QXU114514}
 \date{\today}
+
+\wordcount{1919810}
 
 \addstudent{Zhang San}{20231234}
 \addstudent{Li Si}{20245678}
@@ -15,30 +15,55 @@
 \tableofcontents
 
 \section{Introduction}
-This is the main content of the document. Page numbering starts here.
+This template is design for student of QMUL engineering school, NPU.
+
+The main content of the document begins here. And page numbering starts here.
 
 \section{Methodology}
 Sample text for demonstrating the template features.
 
-\subsection{Subsection}
-Additional content to show hierarchical structure.
-
+\subsection{User's customization}
+For better use, the template has some customizable content.There is some
+basically customization below:
 \begin{lstlisting}
-    import pandas as pd
-    import seaborn as sns
-    import matplotlib.pyplot as plt
-    
-    df = pd.read_csv( "abaaba.csv" )
-    data = pd.DataFrame(df['X'])
-    sns.set_theme()
-    
-    sns.histplot(data=data,x='X',bins=15)
-    
-    plt.xlabel('111')
-    plt.ylabel('222')
-    plt.legend(123")
-    
-    plt.show()
+\title{Edit this to your report name}
+\course{The course code}
 \end{lstlisting}
+
+Generally speaking, no changes are needed in this line. Unless you need the
+report to show a date that's not today.
+\begin{lstlisting}
+\date{\today}
+\end{lstlisting}
+
+For the security reasons, users can only count the number of characters by
+themselves. it's recommended that count your PDF files.
+\begin{lstlisting}
+\wordcount{The word count of your report}
+\end{lstlisting}
+
+For each team member, you need to add their personal information with a single
+addstudent directive so that they can be displayed in the author column of the
+title page
+\begin{lstlisting}
+\addstudent{your team parter's name}{his/her student number}
+\end{lstlisting}
+
+\subsection{Listings}
+Example of implementing code blocks throught listings is below:
+
+\includecode[caption={The Implementing of Code Block Below}]{src/main.tex}
+
+\begin{lstlisting}[language=Python,caption={Example Code 2}] 
+    def hello_world():
+        print("Python code example") 
+\end{lstlisting}
+
+Here shows implement code blocks throught include code file:
+\begin{lstlisting}[caption={The Implementing of Code Block Below}]
+\includecode[language=C++,caption={Example for include code file}]{scr/main.cpp}
+\end{lstlisting}
+% Include external code file
+\includecode[language=C++,caption={Example for include code file}]{src/main.cpp}
 
 \end{document}
